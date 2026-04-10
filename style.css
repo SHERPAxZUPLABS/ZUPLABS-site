@@ -367,6 +367,42 @@ a {
     var(--surface);
 }
 
+.venture-logo-wrap {
+  display: flex;
+  align-items: center;
+  min-height: 108px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.venture-logo-wrap-light {
+  background: #ffffff;
+}
+
+.venture-logo-wrap-dark {
+  background: #050505;
+}
+
+.venture-logo {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.venture-logo-mediproof {
+  max-height: 56px;
+}
+
+.venture-logo-eventproof {
+  max-height: 58px;
+}
+
+.venture-logo-sherpa {
+  max-height: 54px;
+}
+
 .venture-card::after {
   content: "";
   position: absolute;
