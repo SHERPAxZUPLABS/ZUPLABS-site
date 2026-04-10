@@ -96,7 +96,7 @@ a {
 }
 
 .brand {
-  width: clamp(150px, 16vw, 210px);
+  width: clamp(205px, 20vw, 320px);
 }
 
 .brand img {
@@ -228,7 +228,8 @@ a {
 .hero-panel {
   position: relative;
   display: grid;
-  align-content: space-between;
+  grid-template-rows: auto 1fr auto;
+  gap: 22px;
   min-height: 560px;
   padding: 28px;
   border-radius: var(--radius-xl);
@@ -241,31 +242,85 @@ a {
 .hero-panel::before {
   content: "";
   position: absolute;
-  inset: auto -10% -25% 20%;
-  height: 320px;
+  inset: auto -8% -20% 28%;
+  height: 280px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
   filter: blur(72px);
 }
 
-.hero-panel-top {
+.hero-panel-header {
   position: relative;
   z-index: 1;
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  color: var(--text-muted);
-  font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+  display: grid;
+  gap: 16px;
 }
 
-.hero-logo {
+.hero-panel-eyebrow {
+  margin-bottom: 0;
+}
+
+.hero-panel-brandmark {
   position: relative;
   z-index: 1;
-  width: min(100%, 580px);
-  justify-self: center;
-  filter: brightness(1.04);
+  width: min(100%, 420px);
+}
+
+.hero-system-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 14px;
+  align-content: center;
+}
+
+.hero-system-card {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
+}
+
+.system-icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border: 1px solid var(--line-strong);
+  border-radius: 16px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.system-icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hero-system-card h3,
+.hero-system-card p {
+  margin: 0;
+}
+
+.hero-system-card h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: -0.03em;
+}
+
+.hero-system-card p {
+  margin-top: 7px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-size: 0.96rem;
 }
 
 .hero-panel-copy {
@@ -283,7 +338,6 @@ a {
 
 .hero-panel-copy p {
   color: var(--text-muted);
-  text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 0.72rem;
 }
@@ -400,7 +454,7 @@ a {
 }
 
 .venture-logo-sherpa {
-  max-height: 54px;
+  max-height: 72px;
 }
 
 .venture-card::after {
@@ -526,11 +580,19 @@ a {
   }
 
   .hero-panel {
-    min-height: 420px;
+    min-height: auto;
   }
 
   .section-label {
     padding-top: 0;
+  }
+
+  .hero-system-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero-system-card {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -563,18 +625,25 @@ a {
     border-radius: 22px;
   }
 
-  .hero-panel-top,
   .site-footer {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .hero-logo {
+  .hero-panel-brandmark {
     width: 100%;
   }
 
   .hero h1 {
     font-size: clamp(2.7rem, 16vw, 4.4rem);
+  }
+
+  .hero-system-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-system-card {
+    grid-template-columns: 54px minmax(0, 1fr);
   }
 }
 
