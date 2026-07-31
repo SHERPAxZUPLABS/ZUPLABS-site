@@ -419,7 +419,7 @@ a {
 
 .venture-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   margin-top: 32px;
 }
@@ -453,6 +453,37 @@ a {
 
 .venture-logo-wrap-dark {
   background: #050505;
+}
+
+.venture-wordmark-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 108px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.venture-wordmark-wrap-dark {
+  background: #050505;
+}
+
+.venture-wordmark-wrap-light {
+  background: #ffffff;
+}
+
+.venture-wordmark {
+  color: #f2f2f2;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.venture-wordmark-dark {
+  color: #111111;
 }
 
 .venture-logo {
